@@ -1,12 +1,21 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Rectangle2D;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
+
 public class drawdesktoppet extends JPanel implements ActionListener {
+
+    URL b = getClass().getClassLoader().getResource("b.gif");
+    URL bback = getClass().getClassLoader().getResource("bback.gif");
 
     ImageIcon i = new ImageIcon();
 
@@ -40,13 +49,14 @@ public class drawdesktoppet extends JPanel implements ActionListener {
                 velY = Math.abs(velY);
             }
             else if (velX == -1){
-                i = new ImageIcon("src\\bback.gif");
+                    i = new ImageIcon(bback);
+
             }
             else if (velX == 1){
-                i = new ImageIcon("src\\b.gif");
+                    i = new ImageIcon(b);
             }
-            else if (velX == 0){
-                i = new ImageIcon("src\\b.gif");
+            else if (velX == 0) {
+                i = new ImageIcon(b);
             }
         }
     });
@@ -54,7 +64,6 @@ public class drawdesktoppet extends JPanel implements ActionListener {
 
 
     public void paintComponent(Graphics g) {
-
         t2.start();
         t.start();
         setOpaque(false);
@@ -64,6 +73,7 @@ public class drawdesktoppet extends JPanel implements ActionListener {
     }
 
     public static void main(String[] args) {
+        new drawdesktoppet();
     }
 
     @Override
