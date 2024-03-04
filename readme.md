@@ -1,5 +1,5 @@
-Hello.
+# Java Bugs Project
 
-This is an early alpha of Your Personal Bee, a personal bee desktop pet for your computer :D
+## Lots of bugs in Java
 
-IT'S STILL IN DEVELOPMENT
+Based off of Pale-Grey's bee project.
